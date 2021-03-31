@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết CT Hiển Thị Hình Tròn</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368" height="768" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    function Circle(x, y, radius, color){
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color= color;
+    }
+    function render(){
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var circle= new Circle(10, 10, 100, "#000000");
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = Circle.color;
+        ctx.fill();
+    }
+   render();
+</script>
+</body>
+</html>

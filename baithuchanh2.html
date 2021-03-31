@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tryRemoveFromArray(arr,x){
+        var a= true;
+        for(i=0;i<arr.length;i++){
+            if(x!=arr[i]){
+                 continue;
+            }else if(x==arr[i]){
+                a=false;
+                break;
+            }
+        }
+        if(a){
+            return arr;
+        }else {
+            for (let j = i; j < arr.length; j++) {
+                arr[j] = arr[j + 1];
+            }
+            return arr;
+        }
+    }
+    var c= tryRemoveFromArray([1,2,3,4,5],3);
+   document.write(c);
+</script>
+</body>
+</html>

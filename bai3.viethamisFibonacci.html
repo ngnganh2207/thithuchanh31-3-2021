@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = parseInt(prompt("Enter a number"))
+    var flag = true;
+    function isFibonacci (n) {
+        if (n < 0) {
+            flag = false;
+        }
+        else if ((n == 0) || (n == 1)) {
+            flag= true;
+        }
+        else {
+            let arr = [0, 1, 1];
+            let total = 1;
+            let i = 2;
+            while (total < n) {
+                total = arr[i] + arr[i-1];
+                i++;
+                arr[i] = total;
+            }
+            if (arr.indexOf(n) !== -1) {
+                flag= true;
+            }
+            else flag= false;
+        }if(flag){
+            alert("Nằm trong dãy Fibonacci")
+        }else{
+            alert("KHÔNG nằm trong dãy Fibonacci")
+        }
+    }
+    isFibonacci(n);
+</script>
+</body>
+</html>
